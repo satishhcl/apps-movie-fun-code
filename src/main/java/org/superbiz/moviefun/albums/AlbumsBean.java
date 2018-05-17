@@ -30,7 +30,7 @@ public class AlbumsBean {
     @PersistenceContext
     private EntityManager entityManager;
 
-    @Transactional
+
     public void addAlbum(Album album) {
         entityManager.persist(album);
     }
@@ -45,12 +45,12 @@ public class AlbumsBean {
         return entityManager.createQuery(cq).getResultList();
     }
 
-    @Transactional
+
     public void deleteAlbum(Album album) {
         entityManager.remove(album);
     }
 
-    @Transactional
+
     public void updateAlbum(Album album) {
         entityManager.merge(album);
     }
